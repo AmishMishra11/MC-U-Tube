@@ -1,0 +1,104 @@
+/* reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* font size */
+html {
+  font-size: 100%;
+  scroll-behavior: smooth;
+}
+body {
+  font-size: 1.2rem;
+}
+
+/* colors */
+:root {
+  --primary-color: #f0131e;
+  --secondary-color: #b5b7bb;
+  --hover-color: #5925b2;
+  --background-color: #232020;
+  --extra-color: #fe9920;
+}
+
+/* gap // spacing */
+:root {
+  --gap--largest: 2rem 3.5rem;
+  --gap-large: 1.5rem 2.5rem;
+  --gap-medium: 1rem 1.5rem;
+  --gap-small: 0.5rem 1rem;
+  --gap-smallest: 0.25rem 0.5rem;
+}
+
+/* default decoration for list link and buttons */
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* flex-column */
+.flex-c {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* flex-row */
+.flex-r {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+/* border radius */
+.border-radius-S {
+  border-radius: 5px;
+}
+.border-radius-L {
+  border-radius: 15px;
+}
+.border-radius-Circle {
+  border-radius: 100%;
+}
+
+/* z-index */
+.zi-1 {
+  z-index: 5;
+}
+.zi-2 {
+  z-index: 10;
+}
+.zi-3 {
+  z-index: 15;
+}
+.zi-4 {
+  z-index: 20;
+}
+.zi-5 {
+  z-index: 25;
+}
+
+/* media queries */
+@media (max-width: 800px) {
+  html {
+    font-size: 75%;
+  }
+}
+
+@media (max-width: 600px) {
+  html {
+    font-size: 62.5%;
+  }
+}

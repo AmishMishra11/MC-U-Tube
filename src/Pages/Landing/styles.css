@@ -1,0 +1,13 @@
+.landing {
+  display: flex;
+  min-height: 90vh;
+}
+
+@media (max-width: 600px) {
+  .landing {
+    flex-direction: column-reverse;
+  }
+  .outlet-container {
+    flex-grow: 1;
+  }
+}

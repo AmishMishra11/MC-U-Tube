@@ -1,0 +1,44 @@
+.aside {
+  background-color: var(--secondary-color);
+  height: 100%;
+  width: fit-content;
+}
+
+.hover-aside {
+  width: 9rem;
+}
+.aside-ul {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+}
+.aside-ul li {
+  padding: var(--gap-small);
+}
+.aside-ul h4 {
+  padding: 0 0.5rem;
+}
+
+.aside-ul li a {
+  display: flex;
+}
+
+.aside-ul .active {
+  /* background-color: var(--extra-color); */
+  color: var(--primary-color);
+  padding: var(--gap-smallest);
+  border-radius: 3rem;
+  width: fit-content;
+}
+
+@media (max-width: 600px) {
+  .aside {
+    height: fit-content;
+    width: 100vw;
+  }
+  .aside-ul {
+    flex-direction: row;
+
+    justify-content: space-around;
+  }
+}
