@@ -1,5 +1,5 @@
 import React from "react";
-import "./styles.css";
+import "./home.css";
 import { categories } from "../../backend/db/categories";
 import wallpaper from "../../assets/wallpaper.jpg";
 
@@ -52,4 +52,4 @@ function Home() {
   );
 }
 
-export default Home;
+export { Home };

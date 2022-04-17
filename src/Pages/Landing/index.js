@@ -1,12 +1,12 @@
 import React from "react";
-import Aside from "../../Components/Sidebar";
+import { Sidebar } from "../../Components/Sidebar/Sidebar";
 import { Outlet } from "react-router-dom";
 import "./styles.css";
 function Landing() {
   return (
     <div className="landing">
       <div className="aside-container">
-        <Aside />
+        <Sidebar />
       </div>
 
       <div className="outlet-container">

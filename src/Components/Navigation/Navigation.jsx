@@ -2,8 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Logo from "../../assets/Logo.png";
 import { useNavigate } from "react-router-dom";
-import "./styles.css";
-function Nav() {
+import "./navigation.css";
+function Navigation() {
   const navigate = useNavigate();
   return (
     <div className="container-nav zi-5">
@@ -32,4 +32,4 @@ function Nav() {
   );
 }
 
-export default Nav;
+export { Navigation };

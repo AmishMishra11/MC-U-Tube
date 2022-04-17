@@ -1,23 +1,25 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import Footer from "./Components/Footer";
-import Nav from "./Components/Navigation";
 
 import Landing from "./Pages/Landing";
 import Login from "./Pages/Login";
 import Signup from "./Pages/Signup";
 
-import Home from "./Components/Home";
-import Explore from "./Components/Explore";
-import Liked from "./Components/Liked";
-import Playlist from "./Components/Playlist";
-import WatchLater from "./Components//WatchLater";
-import History from "./Components/History";
+import {
+  Explore,
+  Footer,
+  History,
+  Home,
+  Liked,
+  Navigation,
+  Playlist,
+  WatchLater,
+} from "./Components";
 
 function App() {
   return (
     <div className="App">
-      <Nav />
+      <Navigation />
       <Routes>
         <Route exact={true} path="/" element={<Landing />}>
           <Route index element={<Home />} />

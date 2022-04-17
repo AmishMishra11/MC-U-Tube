@@ -1,8 +1,8 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { useState } from "react";
-import "./styles.css";
-function Aside() {
+import "./sidebar.css";
+function Sidebar() {
   const [isHover, setIsHover] = useState(false);
   return (
     <div className={`aside zi-3 ${isHover && "hover-aside"}`}>
@@ -52,4 +52,4 @@ function Aside() {
   );
 }
 
-export default Aside;
+export { Sidebar };
