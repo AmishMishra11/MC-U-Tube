@@ -8,20 +8,27 @@ import { v4 as uuid } from "uuid";
 export const categories = [
   {
     _id: uuid(),
-    categoryName: "Computer Programming",
-    description:
-      "Computer programming is the process of designing and building an executable computer program to accomplish a specific computing",
+    imageUrl:"https://res.cloudinary.com/amish11/image/upload/v1650184090/video%20lib%20category/Trailers_dub3fd.jpg",
+    categoryName: "Trailers",
+    description: "Videos of different marvel shows and movie trailers",
   },
   {
     _id: uuid(),
-    categoryName: "Frontend Development",
-    description:
-      "Front-end web development, also known as client-side development is the practice of producing HTML, CSS and JavaScript for a website or Web Application",
+    imageUrl:"https://res.cloudinary.com/amish11/image/upload/v1650184088/video%20lib%20category/Entertainment_fyl3an.jpg",
+    categoryName: "Entertainment",
+    description: "Videos of funny skits about marvel movies",
   },
   {
     _id: uuid(),
-    categoryName: "Backend Development",
-    description:
-      "Backend Development is also known as server-side development. It is everything that the users don't see and contains behind-the-scenes activities that occur when performing any action on a website.",
+    imageUrl:"https://res.cloudinary.com/amish11/image/upload/v1650184098/video%20lib%20category/Discussion_poykok.jpg",
+    categoryName: "Discussion",
+    description: "Videos about marvel and all its theory",
+  },
+
+  {
+    _id: uuid(),
+    imageUrl:"https://res.cloudinary.com/amish11/image/upload/v1650184086/video%20lib%20category/Shorts_uhf50k.jpg",
+    categoryName: "Shorts",
+    description: "Shorts about marvel memes",
   },
 ];

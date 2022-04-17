@@ -1,0 +1,78 @@
+.container-nav {
+  position: sticky;
+  top: 0;
+  padding: 0;
+}
+.logo {
+  height: 6rem;
+  width: 6rem;
+}
+
+.nav header {
+  padding: var(--gap-medium);
+  background-color: var(--background-color);
+}
+.nav .brand-link:hover {
+  background-color: var(--background-color);
+  opacity: 163%;
+}
+
+.name {
+  color: var(--primary-color);
+  margin: 0;
+}
+.nav .name {
+  margin-left: 0;
+}
+
+.menu li {
+  padding: var(--gap-small);
+}
+
+.menu .login {
+  padding: var(--gap-small);
+  background-color: var(--primary-color);
+}
+
+.menu .login:hover {
+  opacity: 63%;
+  cursor: pointer;
+}
+
+@media (max-width: 700px) {
+  nav .menu {
+    padding: 0;
+  }
+
+  .menu li {
+    padding: 3px;
+  }
+}
+
+@media (max-width: 610px) {
+  nav .menu,
+  .menu li {
+    padding: var(--gap-small);
+  }
+}
+
+@media (max-width: 450px) {
+  nav .title .logo {
+    width: 4rem;
+    height: 4rem;
+  }
+
+  nav .title .brand-link {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 400px) {
+  nav .menu {
+    padding: 0;
+  }
+
+  .menu li {
+    padding: 3px;
+  }
+}
