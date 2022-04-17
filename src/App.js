@@ -5,6 +5,8 @@ import Landing from "./Pages/Landing";
 import Login from "./Pages/Login";
 import Signup from "./Pages/Signup";
 
+import { RequiresAuth } from "./Components/RequiresAuth/RequiresAuth";
+
 import {
   Explore,
   Footer,
@@ -25,10 +27,39 @@ function App() {
           <Route index element={<Home />} />
           <Route path="home" element={<Home />} />
           <Route path="explore" element={<Explore />} />
-          <Route path="liked" element={<Liked />} />
-          <Route path="playlist" element={<Playlist />} />
-          <Route path="watchlater" element={<WatchLater />} />
-          <Route path="history" element={<History />} />
+
+          <Route
+            path="liked"
+            element={
+              <RequiresAuth>
+                <Liked />
+              </RequiresAuth>
+            }
+          />
+          <Route
+            path="playlist"
+            element={
+              <RequiresAuth>
+                <Playlist />
+              </RequiresAuth>
+            }
+          />
+          <Route
+            path="watchlater"
+            element={
+              <RequiresAuth>
+                <WatchLater />
+              </RequiresAuth>
+            }
+          />
+          <Route
+            path="history"
+            element={
+              <RequiresAuth>
+                <History />
+              </RequiresAuth>
+            }
+          />
         </Route>
         <Route path="login" element={<Login />} />
         <Route path="signup" element={<Signup />} />

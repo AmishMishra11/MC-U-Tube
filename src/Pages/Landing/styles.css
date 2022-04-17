@@ -7,6 +7,15 @@
   .landing {
     flex-direction: column-reverse;
   }
+
+  .aside-container {
+    position: sticky;
+    bottom: 0;
+  }
+  .aside-container > * {
+    font-size: 2rem;
+  }
+
   .outlet-container {
     flex-grow: 1;
   }

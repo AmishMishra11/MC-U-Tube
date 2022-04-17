@@ -8,7 +8,7 @@ function Home() {
     <div className="home-container">
       <header className="home-header">
         <div className="home-image">
-          <img class="responsive-image" src={wallpaper} alt="coding" />
+          <img className="responsive-image" src={wallpaper} alt="coding" />
         </div>
 
         <div className="home-discription">
@@ -34,10 +34,10 @@ function Home() {
         <div className="categories">
           <ul>
             {categories.map((item) => (
-              <li>
+              <li key={item._id}>
                 <div>
                   <img
-                    class="responsive-image"
+                    className="responsive-image"
                     src={item.imageUrl}
                     alt="coding"
                   />
