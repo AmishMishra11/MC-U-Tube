@@ -2,9 +2,20 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Logo from "../../assets/Logo.png";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../../Context/AuthContext";
 import "./navigation.css";
 function Navigation() {
   const navigate = useNavigate();
+
+  const { stateAuth, dispatchAuth } = useAuth();
+  const { isAuth } = stateAuth;
+
+  const handleLogout = () => {
+    dispatchAuth({ type: "USER_LOGOUT" });
+    localStorage.removeItem("token");
+    navigate("/");
+  };
+
   return (
     <div className="container-nav zi-5">
       <nav className="nav">
@@ -18,12 +29,18 @@ function Navigation() {
 
           <ul className="menu">
             <li>
-              <div
-                className="login border-radius-S"
-                onClick={() => navigate("/login")}
-              >
-                Login
-              </div>
+              {isAuth ? (
+                <div className="login border-radius-S" onClick={handleLogout}>
+                  Logout
+                </div>
+              ) : (
+                <div
+                  className="login border-radius-S"
+                  onClick={() => navigate("/login")}
+                >
+                  Login
+                </div>
+              )}
             </li>
           </ul>
         </header>
