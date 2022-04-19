@@ -1,0 +1,48 @@
+.card-container {
+  margin: var(--gap-medium);
+  position: relative;
+}
+
+.card-container img {
+  height: 18rem;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.card-container h3 {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: 20rem;
+  height: 1.2em;
+  white-space: nowrap;
+}
+
+.card-text {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--gap-smallest);
+}
+
+.card-text i {
+  cursor: pointer;
+  padding: var(--gap-small);
+}
+
+.card-options {
+  display: none;
+  position: absolute;
+  bottom: -1.5rem;
+  right: 1rem;
+}
+.card-options i {
+  padding: var(--gap-smallest);
+  background-color: var(--background-color);
+  color: var(--extra-color);
+  cursor: pointer;
+  border-radius: 5px;
+  margin: 0.5rem;
+}
+.show-options {
+  display: block;
+}

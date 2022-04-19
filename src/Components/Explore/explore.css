@@ -1,0 +1,32 @@
+.explore-category-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.explore-category-container input {
+  display: none;
+}
+
+.explore-category-container p {
+  padding: var(--gap-small);
+  margin: var(--gap-small);
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  cursor: pointer;
+}
+
+.filterSelected {
+  background-color: var(--extra-color);
+}
+
+.explore-card {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+}
