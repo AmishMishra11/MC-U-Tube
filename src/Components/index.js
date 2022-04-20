@@ -6,4 +6,5 @@ export { Liked } from "./Liked/Liked";
 export { Navigation } from "./Navigation/Navigation";
 export { Playlist } from "./Playlist/Playlist";
 export { Sidebar } from "./Sidebar/Sidebar";
+export { Video } from "./Video/Video";
 export { WatchLater } from "./WatchLater/WatchLater";
