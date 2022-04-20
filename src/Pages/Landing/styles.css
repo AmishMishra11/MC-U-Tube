@@ -3,6 +3,10 @@
   min-height: 90vh;
 }
 
+.outlet-container {
+  width: 100%;
+}
+
 @media (max-width: 600px) {
   .landing {
     flex-direction: column-reverse;
