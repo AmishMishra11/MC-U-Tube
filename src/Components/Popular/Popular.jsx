@@ -38,7 +38,9 @@ function Popular() {
 
   return (
     <div className="popular-container">
-      <h2>Popular videos:</h2>
+      <div className="pupular-title">
+        <h2>Popular videos:</h2>
+      </div>
       <div className="pupular-card">
         {[...popularVideos].map((item) => (
           <Card key={item._id} item={item} />

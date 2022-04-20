@@ -6,7 +6,7 @@ import "./footer.css";
 
 function Footer() {
   return (
-    <footer className="footer">
+    <footer className="footer zi-4">
       <div className="footer-main">
         <div className="footer-nav">
           <div className="footer-logo flex-c">

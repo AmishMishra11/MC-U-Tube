@@ -60,13 +60,10 @@
 }
 
 .play-pupular-container {
+  padding: var(--gap-small);
   width: 100%;
-}
-
-.play-pupular-container .pupular-card {
   overflow-y: auto;
   height: 80vh;
-  padding: var(--gap-small);
 }
 
 .play-video-discription p {
