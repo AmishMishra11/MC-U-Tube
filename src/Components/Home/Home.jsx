@@ -2,8 +2,13 @@ import React from "react";
 import "./home.css";
 import { categories } from "../../backend/db/categories";
 import wallpaper from "../../assets/wallpaper.jpg";
+import { useNavigate } from "react-router-dom";
+import { useCategory } from "../../Context/CategoryContext";
 
 function Home() {
+  const navigate = useNavigate();
+  const { setFilterCaregory } = useCategory();
+
   return (
     <div className="home-container">
       <header className="home-header">
@@ -22,27 +27,33 @@ function Home() {
             A place where you can watch all the mcu related viedos. We have
             Marvel trailers, Marvel Memes, Marvel theory discussions.
           </p>
-          <button>Explore</button>
+          <button onClick={() => navigate("/explore")}>Explore</button>
         </div>
       </header>
 
       <div className="home-category ">
         <div className="category-header">
           <h2>Categories:</h2>
-          <button>See All</button>
+          <button onClick={() => navigate("/explore")}>See All</button>
         </div>
         <div className="categories">
           <ul>
-            {categories.map((item) => (
-              <li key={item._id}>
+            {categories.map(({ _id, categoryName, imageUrl }) => (
+              <li
+                key={_id}
+                onClick={() => {
+                  setFilterCaregory(categoryName);
+                  navigate("/explore");
+                }}
+              >
                 <div>
                   <img
                     className="responsive-image"
-                    src={item.imageUrl}
+                    src={imageUrl}
                     alt="coding"
                   />
                 </div>
-                <h2>{item.categoryName}</h2>
+                <h2>{categoryName}</h2>
               </li>
             ))}
           </ul>

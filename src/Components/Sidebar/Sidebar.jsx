@@ -3,8 +3,8 @@ import { NavLink } from "react-router-dom";
 import "./sidebar.css";
 function Sidebar() {
   return (
-    <div className="aside zi-3 ">
-      <ul className="aside-ul">
+    <div className="aside  ">
+      <ul className="aside-ul ">
         <li>
           <NavLink to="/home">
             <i className="fas fa-home"></i>

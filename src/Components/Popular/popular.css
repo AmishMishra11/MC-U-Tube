@@ -1,0 +1,12 @@
+.pupular-container,
+.pupular-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.popular-container h2 {
+  color: var(--primary-color);
+  padding: var(--gap-medium);
+}

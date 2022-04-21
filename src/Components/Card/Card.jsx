@@ -1,19 +1,21 @@
 import React from "react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import "./card.css";
 const Card = ({ item }) => {
   const { _id, title, creator } = item;
 
   const [show, setShow] = useState(false);
+
   return (
     <div className="card-container">
-      <div className="card-image">
+      <Link className="card-image" to={`/video/${_id}`}>
         <img
           className="responsive-image"
           src={`https://i.ytimg.com/vi/${_id}/hqdefault.jpg`}
           alt="video"
         />
-      </div>
+      </Link>
       <div className="card-text">
         <div>
           <h3>{title}</h3>

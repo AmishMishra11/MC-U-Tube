@@ -1,18 +1,15 @@
 import React from "react";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Card } from "../Card/Card";
-import { loadVideos } from "../../Services/User/Videos/loadVideos";
 import "./explore.css";
 import { useVideo } from "../../Context/VideoContext";
+import { useCategory } from "../../Context/CategoryContext";
 function Explore() {
-  const { stateVideo, dispatchVideo } = useVideo();
+  const { stateVideo } = useVideo();
+  const { filterCategory, setFilterCaregory } = useCategory();
+
   const { loading, video } = stateVideo;
 
-  const [filterCategory, setFilterCaregory] = useState("All");
-
-  useEffect(() => {
-    loadVideos(dispatchVideo);
-  }, []);
   let result;
   if (filterCategory === "All") {
     result = video;
@@ -28,7 +25,7 @@ function Explore() {
             type="radio"
             name="category"
             checked={filterCategory === "All"}
-            onClick={() => setFilterCaregory("All")}
+            onChange={() => setFilterCaregory("All")}
           />
           <p className={`${filterCategory === "All" && "filterSelected"}`}>
             All
@@ -39,7 +36,7 @@ function Explore() {
             type="radio"
             name="category"
             checked={filterCategory === "Trailer"}
-            onClick={() => setFilterCaregory("Trailer")}
+            onChange={() => setFilterCaregory("Trailer")}
           />
           <p className={`${filterCategory === "Trailer" && "filterSelected"}`}>
             Trailer
@@ -50,7 +47,7 @@ function Explore() {
             type="radio"
             name="category"
             checked={filterCategory === "Discussion"}
-            onClick={() => setFilterCaregory("Discussion")}
+            onChange={() => setFilterCaregory("Discussion")}
           />
           <p
             className={`${filterCategory === "Discussion" && "filterSelected"}`}
@@ -63,7 +60,7 @@ function Explore() {
             type="radio"
             name="category"
             checked={filterCategory === "Entertainment"}
-            onClick={() => setFilterCaregory("Entertainment")}
+            onChange={() => setFilterCaregory("Entertainment")}
           />
           <p
             className={`${
@@ -78,7 +75,7 @@ function Explore() {
             type="radio"
             name="category"
             checked={filterCategory === "Shorts"}
-            onClick={() => setFilterCaregory("Shorts")}
+            onChange={() => setFilterCaregory("Shorts")}
           />
           <p className={`${filterCategory === "Shorts" && "filterSelected"}`}>
             Shorts

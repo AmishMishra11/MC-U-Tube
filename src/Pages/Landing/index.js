@@ -5,7 +5,7 @@ import "./styles.css";
 function Landing() {
   return (
     <div className="landing">
-      <div className="aside-container">
+      <div className="aside-container zi-3">
         <Sidebar />
       </div>
 

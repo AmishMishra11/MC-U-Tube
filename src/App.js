@@ -15,10 +15,21 @@ import {
   Liked,
   Navigation,
   Playlist,
+  Video,
   WatchLater,
 } from "./Components";
 
+import { useEffect } from "react";
+import { loadVideos } from "./Services/Videos/loadVideos";
+import { useVideo } from "./Context/VideoContext";
+
 function App() {
+  const { dispatchVideo } = useVideo();
+
+  useEffect(() => {
+    loadVideos(dispatchVideo);
+  }, []);
+
   return (
     <div className="App">
       <Navigation />
@@ -27,6 +38,7 @@ function App() {
           <Route index element={<Home />} />
           <Route path="home" element={<Home />} />
           <Route path="explore" element={<Explore />} />
+          <Route path="video/:videoId" element={<Video />} />
 
           <Route
             path="liked"
