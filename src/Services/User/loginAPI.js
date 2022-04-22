@@ -19,6 +19,7 @@ export const loginUser = async (
       });
       localStorage.setItem("token", res.data.encodedToken);
 
+      localStorage.setItem("first", res.data.foundUser.firstName);
       const whereTo = location?.state?.from?.pathname;
       navigate(whereTo || "../explore", { replace: true });
     }

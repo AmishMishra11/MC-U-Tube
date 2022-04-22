@@ -10,6 +10,10 @@ export const VideoReducer = (stateVideo, actionVideo) => {
       };
     case "LOAD_FAIL":
       return { ...stateVideo, loading: false, video: null };
+
+    case "UPDATE_HISTORY":
+      return { ...stateVideo, history: actionVideo.payload };
+
     default:
       return stateVideo;
   }
