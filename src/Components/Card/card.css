@@ -50,6 +50,7 @@
   justify-content: center;
 }
 
-.card-options .watchlater-active {
+.card-options .watchlater-active,
+.card-options .liked-active {
   color: var(--extra-color);
 }

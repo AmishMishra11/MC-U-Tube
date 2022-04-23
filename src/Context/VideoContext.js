@@ -2,6 +2,7 @@ import { createContext, useContext, useReducer, useEffect } from "react";
 
 import { VideoReducer } from "../Reducers/VideoReducer";
 import { loadHistory } from "../Services/History/loadHistory";
+import { loadLiked } from "../Services/Liked/loadLiked";
 import { loadWatchlater } from "../Services/Watchlater/loadWatchlater";
 
 const VideoContext = createContext(null);
@@ -12,6 +13,7 @@ const VideoContextProvider = ({ children }) => {
   useEffect(() => {
     loadHistory();
     loadWatchlater();
+    loadLiked();
   }, []);
 
   const [stateVideo, dispatchVideo] = useReducer(VideoReducer, {
@@ -19,6 +21,7 @@ const VideoContextProvider = ({ children }) => {
     video: [],
     history: [],
     watchlater: [],
+    liked: [],
   });
 
   return (

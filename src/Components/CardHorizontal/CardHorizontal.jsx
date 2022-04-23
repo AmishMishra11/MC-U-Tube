@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { removeHistory } from "../../Services/History/removeHistory";
 import { useVideo } from "../../Context/VideoContext";
 import { removeWatchlater } from "../../Services/Watchlater/removeWatchlater";
+import { removeliked } from "../../Services/Liked/removeLiked";
 
 function CardHorizontal({ item, cardType }) {
   const removeCard = (id) => {
@@ -13,6 +14,10 @@ function CardHorizontal({ item, cardType }) {
 
     if (cardType === "watchlater") {
       removeWatchlater(id, dispatchVideo);
+    }
+
+    if (cardType === "liked") {
+      removeliked(id, dispatchVideo);
     }
   };
 

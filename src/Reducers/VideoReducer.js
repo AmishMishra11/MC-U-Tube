@@ -14,6 +14,8 @@ export const VideoReducer = (stateVideo, actionVideo) => {
       return { ...stateVideo, history: actionVideo.payload };
     case "UPDATE_WATCHLATER":
       return { ...stateVideo, watchlater: actionVideo.payload };
+    case "UPDATE_LIKED":
+      return { ...stateVideo, liked: actionVideo.payload };
     default:
       return stateVideo;
   }
