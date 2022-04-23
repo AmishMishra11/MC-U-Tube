@@ -1,0 +1,47 @@
+.watchlater-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  flex-direction: column;
+  margin: var(--gap-large);
+}
+
+.watchlater-content-container {
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
+  width: 90%;
+}
+.watchlater-card-container {
+  width: 100%;
+}
+
+.watchlater-info {
+  padding: var(--gap-large);
+  background-color: var(--extra-color);
+  border-radius: 10px;
+  margin: 1rem;
+  width: 30%;
+}
+
+@media (max-width: 1000px) {
+  .watchlater-content-container {
+    width: 95%;
+  }
+  .watchlater-info {
+    margin: 1;
+  }
+}
+
+@media (max-width: 800px) {
+  .watchlater-content-container {
+    flex-direction: column;
+    width: 95%;
+  }
+
+  .watchlater-info {
+    margin: 0;
+    width: 100%;
+  }
+}

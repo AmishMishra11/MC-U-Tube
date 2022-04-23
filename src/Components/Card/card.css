@@ -38,12 +38,18 @@
 .card-options i {
   padding: var(--gap-smallest);
   background-color: var(--background-color);
-  color: var(--extra-color);
+  color: white;
   cursor: pointer;
   border-radius: 5px;
   margin: 0.5rem;
 }
 
 .show-options {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-options .watchlater-active {
+  color: var(--extra-color);
 }
