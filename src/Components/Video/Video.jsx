@@ -5,11 +5,15 @@ import "./video.css";
 
 import { Popular } from "../Popular/Popular";
 import { useState } from "react";
+import { addLiked } from "../../Services/Liked/addLiked";
+import { removeliked } from "../../Services/Liked/removeLiked";
+import { addWatchlater } from "../../Services/Watchlater/addWatchlater";
+import { removeWatchlater } from "../../Services/Watchlater/removeWatchlater";
 
 function Video() {
   const { videoId } = useParams();
-  const { stateVideo } = useVideo();
-  const { video } = stateVideo;
+  const { stateVideo, dispatchVideo } = useVideo();
+  const { video, watchlater, liked } = stateVideo;
 
   const currVideo = video.find((video) => video._id === videoId);
 
@@ -31,8 +35,42 @@ function Video() {
           <h2>{title}</h2>
 
           <div className="play-video-options">
-            <i className="fas fa-thumbs-up"></i>
-            <i className="fas fa-clock"></i>
+            <div
+              onClick={() =>
+                liked.length === 0
+                  ? addLiked(currVideo, dispatchVideo)
+                  : liked.find((video) =>
+                      video._id === _id
+                        ? removeliked(_id, dispatchVideo)
+                        : addLiked(currVideo, dispatchVideo)
+                    )
+              }
+            >
+              <i
+                className={`fas fa-thumbs-up  ${
+                  liked.find((video) => video._id === _id) && `liked-active`
+                }  `}
+              ></i>
+            </div>
+
+            <div
+              onClick={() =>
+                watchlater.length === 0
+                  ? addWatchlater(currVideo, dispatchVideo)
+                  : watchlater.find((video) =>
+                      video._id === _id
+                        ? removeWatchlater(_id, dispatchVideo)
+                        : addWatchlater(currVideo, dispatchVideo)
+                    )
+              }
+            >
+              <i
+                className={`fas fa-clock  ${
+                  watchlater.find((video) => video._id === _id) &&
+                  `watchlater-active`
+                }  `}
+              ></i>
+            </div>
             <i className="fas fa-list"></i>
           </div>
         </div>

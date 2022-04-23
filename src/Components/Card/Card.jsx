@@ -3,6 +3,8 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useVideo } from "../../Context/VideoContext";
 import { addHistory } from "../../Services/History/addHistory";
+import { addLiked } from "../../Services/Liked/addLiked";
+import { removeliked } from "../../Services/Liked/removeLiked";
 import { addWatchlater } from "../../Services/Watchlater/addWatchlater";
 import { removeWatchlater } from "../../Services/Watchlater/removeWatchlater";
 import "./card.css";
@@ -14,7 +16,7 @@ const Card = ({ item }) => {
 
   const { stateVideo, dispatchVideo } = useVideo();
 
-  const { watchlater } = stateVideo;
+  const { watchlater, liked } = stateVideo;
 
   return (
     <div className="card-container">
@@ -42,7 +44,23 @@ const Card = ({ item }) => {
       </div>
 
       <div className={`card-options ${show ? "show-options" : ""} `}>
-        <i className="fas fa-thumbs-up"></i>
+        <div
+          onClick={() =>
+            liked.length === 0
+              ? addLiked(item, dispatchVideo)
+              : liked.find((video) =>
+                  video._id === _id
+                    ? removeliked(_id, dispatchVideo)
+                    : addLiked(item, dispatchVideo)
+                )
+          }
+        >
+          <i
+            className={`fas fa-thumbs-up  ${
+              liked.find((video) => video._id === _id) && `liked-active`
+            }  `}
+          ></i>
+        </div>
 
         <div
           onClick={() =>
