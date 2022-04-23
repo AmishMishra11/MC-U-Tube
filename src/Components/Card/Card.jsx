@@ -1,15 +1,23 @@
 import React from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useVideo } from "../../Context/VideoContext";
+import { addHistory } from "../../Services/History/addHistory";
 import "./card.css";
 const Card = ({ item }) => {
   const { _id, title, creator } = item;
 
   const [show, setShow] = useState(false);
 
+  const { dispatchVideo } = useVideo();
+
   return (
     <div className="card-container">
-      <Link className="card-image" to={`/video/${_id}`}>
+      <Link
+        className="card-image"
+        to={`/video/${_id}`}
+        onClick={() => addHistory(item, dispatchVideo)}
+      >
         <img
           className="responsive-image"
           src={`https://i.ytimg.com/vi/${_id}/hqdefault.jpg`}

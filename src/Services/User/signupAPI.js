@@ -25,6 +25,7 @@ export const signupUser = async (
         payload: res.data.createdUser,
       });
       localStorage.setItem("token", res.data.encodedToken);
+      localStorage.setItem("first", res.data.createdUser.firstName);
 
       const whereTo = location?.state?.from?.pathname;
       navigate(whereTo || "../explore", { replace: true });

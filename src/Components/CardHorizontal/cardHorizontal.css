@@ -1,0 +1,27 @@
+.card-horizontal-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin: 1rem 0;
+}
+
+.histroy-video-info {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.card-horizontal-text {
+  padding: var(--gap-small);
+}
+
+.card-horizontal-image img {
+  height: 10rem;
+  width: 12rem;
+  border-radius: 5px;
+}
+
+.history-remove {
+  cursor: pointer;
+}
