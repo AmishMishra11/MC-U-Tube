@@ -23,14 +23,16 @@ function History() {
         {history.length === 0 ? (
           <div>
             <h1>History is Empty</h1>
-
-            {/* <img className="responsive-image" src={Empty} alt="Empty Wishlist" /> */}
           </div>
         ) : (
           <main className="history-card-container">
             <div className="history-card">
               {history.map((item) => (
-                <CardHorizontal key={item._id} item={item} />
+                <CardHorizontal
+                  key={item._id}
+                  item={item}
+                  cardType={"history"}
+                />
               ))}
             </div>
           </main>

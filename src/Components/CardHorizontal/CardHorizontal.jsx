@@ -3,8 +3,19 @@ import "./cardHorizontal.css";
 import { Link } from "react-router-dom";
 import { removeHistory } from "../../Services/History/removeHistory";
 import { useVideo } from "../../Context/VideoContext";
+import { removeWatchlater } from "../../Services/Watchlater/removeWatchlater";
 
-function CardHorizontal({ item }) {
+function CardHorizontal({ item, cardType }) {
+  const removeCard = (id) => {
+    if (cardType === "history") {
+      removeHistory(id, dispatchVideo);
+    }
+
+    if (cardType === "watchlater") {
+      removeWatchlater(id, dispatchVideo);
+    }
+  };
+
   const { dispatchVideo } = useVideo();
 
   const { _id, title, creator } = item;
@@ -25,10 +36,7 @@ function CardHorizontal({ item }) {
         </div>
       </div>
 
-      <div
-        className="history-remove"
-        onClick={() => removeHistory(_id, dispatchVideo)}
-      >
+      <div className="history-remove" onClick={() => removeCard(_id)}>
         <i className="fas fa-trash"></i>
       </div>
     </div>
