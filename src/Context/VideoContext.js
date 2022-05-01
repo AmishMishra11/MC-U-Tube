@@ -3,6 +3,7 @@ import { createContext, useContext, useReducer, useEffect } from "react";
 import { VideoReducer } from "../Reducers/VideoReducer";
 import { loadHistory } from "../Services/History/loadHistory";
 import { loadLiked } from "../Services/Liked/loadLiked";
+import { loadPlaylist } from "../Services/Playlist/loadPlaylist";
 import { loadWatchlater } from "../Services/Watchlater/loadWatchlater";
 
 const VideoContext = createContext(null);
@@ -14,6 +15,7 @@ const VideoContextProvider = ({ children }) => {
     loadHistory();
     loadWatchlater();
     loadLiked();
+    loadPlaylist();
   }, []);
 
   const [stateVideo, dispatchVideo] = useReducer(VideoReducer, {
@@ -22,6 +24,8 @@ const VideoContextProvider = ({ children }) => {
     history: [],
     watchlater: [],
     liked: [],
+    playlist: [],
+    showModal: false,
   });
 
   return (

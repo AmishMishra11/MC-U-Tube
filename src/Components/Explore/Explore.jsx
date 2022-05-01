@@ -1,13 +1,13 @@
 import React from "react";
-import { useState } from "react";
 import { Card } from "../Card/Card";
-import "./explore.css";
 import { useVideo } from "../../Context/VideoContext";
 import { useCategory } from "../../Context/CategoryContext";
+
+import "./explore.css";
+
 function Explore() {
   const { stateVideo } = useVideo();
   const { filterCategory, setFilterCaregory } = useCategory();
-
   const { loading, video } = stateVideo;
 
   let result;

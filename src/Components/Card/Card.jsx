@@ -7,6 +7,8 @@ import { addLiked } from "../../Services/Liked/addLiked";
 import { removeliked } from "../../Services/Liked/removeLiked";
 import { addWatchlater } from "../../Services/Watchlater/addWatchlater";
 import { removeWatchlater } from "../../Services/Watchlater/removeWatchlater";
+import { ModalPlaylist } from "../ModalPlaylist/ModalPlaylist";
+
 import "./card.css";
 
 const Card = ({ item }) => {
@@ -17,6 +19,8 @@ const Card = ({ item }) => {
   const { stateVideo, dispatchVideo } = useVideo();
 
   const { watchlater, liked } = stateVideo;
+
+  const [showModal, setShowModal] = useState(false);
 
   return (
     <div className="card-container">
@@ -81,8 +85,10 @@ const Card = ({ item }) => {
           ></i>
         </div>
 
-        <i className="fas fa-list"></i>
+        <i className="fas fa-list" onClick={() => setShowModal(true)}></i>
       </div>
+
+      {showModal && <ModalPlaylist item={item} setShowModal={setShowModal} />}
     </div>
   );
 };
