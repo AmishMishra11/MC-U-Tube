@@ -9,6 +9,7 @@ import { addLiked } from "../../Services/Liked/addLiked";
 import { removeliked } from "../../Services/Liked/removeLiked";
 import { addWatchlater } from "../../Services/Watchlater/addWatchlater";
 import { removeWatchlater } from "../../Services/Watchlater/removeWatchlater";
+import { ModalPlaylist } from "../ModalPlaylist/ModalPlaylist";
 
 function Video() {
   const { videoId } = useParams();
@@ -20,6 +21,8 @@ function Video() {
   const { _id, title, category, creator, description } = currVideo;
 
   const [showDescription, setShowDescription] = useState(false);
+
+  const [showModal, setShowModal] = useState(false);
 
   return (
     <div className="video-container">
@@ -71,9 +74,13 @@ function Video() {
                 }  `}
               ></i>
             </div>
-            <i className="fas fa-list"></i>
+            <i className="fas fa-list" onClick={() => setShowModal(true)}></i>
           </div>
         </div>
+
+        {showModal && (
+          <ModalPlaylist item={currVideo} setShowModal={setShowModal} />
+        )}
 
         <div className="play-video-creator">
           <h3>{creator}</h3>

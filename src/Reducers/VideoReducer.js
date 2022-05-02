@@ -16,6 +16,21 @@ export const VideoReducer = (stateVideo, actionVideo) => {
       return { ...stateVideo, watchlater: actionVideo.payload };
     case "UPDATE_LIKED":
       return { ...stateVideo, liked: actionVideo.payload };
+    case "UPDATE_PLAYLIST":
+      return { ...stateVideo, playlist: actionVideo.payload };
+
+    case "UPDATE_PLAYLIST_ARRAY":
+      return {
+        ...stateVideo,
+        playlist: stateVideo.playlist.map((item) =>
+          item._id === actionVideo.payload._id
+            ? { ...item, videos: actionVideo.payload.videos }
+            : item
+        ),
+      };
+
+    case "MODAL-DISPLAY":
+      return { ...stateVideo, showModal: actionVideo.payload };
     default:
       return stateVideo;
   }

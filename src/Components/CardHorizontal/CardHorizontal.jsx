@@ -5,8 +5,9 @@ import { removeHistory } from "../../Services/History/removeHistory";
 import { useVideo } from "../../Context/VideoContext";
 import { removeWatchlater } from "../../Services/Watchlater/removeWatchlater";
 import { removeliked } from "../../Services/Liked/removeLiked";
+import { removePlaylistVideo } from "../../Services/Playlist/removePlaylistVideo";
 
-function CardHorizontal({ item, cardType }) {
+function CardHorizontal({ item, cardType, playlist }) {
   const removeCard = (id) => {
     if (cardType === "history") {
       removeHistory(id, dispatchVideo);
@@ -18,6 +19,10 @@ function CardHorizontal({ item, cardType }) {
 
     if (cardType === "liked") {
       removeliked(id, dispatchVideo);
+    }
+
+    if (cardType === "playlist") {
+      removePlaylistVideo(playlist._id, item._id, dispatchVideo);
     }
   };
 

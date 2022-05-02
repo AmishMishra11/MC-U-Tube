@@ -1,0 +1,84 @@
+.modal-playlist {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 30rem;
+  width: 30rem;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--secondary-color);
+  padding: var(--gap-medium);
+  border-radius: 10px;
+  border: 3px solid var(--primary-color);
+  overflow: hidden;
+}
+
+.modal-playlist i {
+  cursor: pointer;
+}
+
+.modal-playlist-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.modal-playlist-header h1 {
+  color: var(--primary-color);
+}
+
+.modal-playlist-items {
+  display: flex;
+  align-self: center;
+  justify-items: flex-start;
+  width: 100%;
+  height: 80%;
+  flex-direction: column;
+}
+
+.modal-item-name {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: var(--gap-smallest);
+}
+.modal-item-name p {
+  padding: 0 1rem;
+}
+
+.modal-playlist-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.modal-playlist-text input {
+  width: 90%;
+  padding: var(--gap-small);
+  border: 2px solid var(--primary-color);
+  border-radius: 10px;
+}
+
+.modal-playlist-text button {
+  background-color: var(--primary-color);
+  border-radius: 50%;
+  padding: 0.5rem;
+  margin: 0 0.5rem;
+}
+
+@media (max-width: 560px) {
+  .modal-playlist {
+    height: 25rem;
+    width: 25rem;
+  }
+}
+
+@media (max-width: 370px) {
+  .modal-playlist {
+    height: 22.5rem;
+    width: 22.5rem;
+  }
+}
