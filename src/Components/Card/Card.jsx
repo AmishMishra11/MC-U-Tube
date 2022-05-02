@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { useVideo } from "../../Context/VideoContext";
 import { addHistory } from "../../Services/History/addHistory";
@@ -21,6 +21,22 @@ const Card = ({ item }) => {
   const { watchlater, liked } = stateVideo;
 
   const [showModal, setShowModal] = useState(false);
+
+  const ref = useRef();
+
+  useEffect(() => {
+    const checkIfClickedOutside = (e) => {
+      if (show && ref.current && !ref.current.contains(e.target)) {
+        setShow(false);
+      }
+    };
+
+    document.addEventListener("mousedown", checkIfClickedOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", checkIfClickedOutside);
+    };
+  }, [show]);
 
   return (
     <div className="card-container">
@@ -47,7 +63,7 @@ const Card = ({ item }) => {
         ></i>
       </div>
 
-      <div className={`card-options ${show ? "show-options" : ""} `}>
+      <div className={`card-options ${show ? "show-options" : ""}`} ref={ref}>
         <div
           onClick={() =>
             liked.length === 0
@@ -88,7 +104,9 @@ const Card = ({ item }) => {
         <i className="fas fa-list" onClick={() => setShowModal(true)}></i>
       </div>
 
-      {showModal && <ModalPlaylist item={item} setShowModal={setShowModal} />}
+      {showModal && (
+        <ModalPlaylist item={item} setShowModal={setShowModal} ref={ref} />
+      )}
     </div>
   );
 };
