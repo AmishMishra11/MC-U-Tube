@@ -4,6 +4,7 @@ import Logo from "../../assets/Logo.png";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../Context/AuthContext";
 import "./navigation.css";
+import { toast } from "react-toastify";
 function Navigation() {
   const navigate = useNavigate();
 
@@ -14,6 +15,7 @@ function Navigation() {
     dispatchAuth({ type: "USER_LOGOUT" });
     localStorage.removeItem("token");
     navigate("/");
+    toast.success("User Logged Out");
   };
 
   return (

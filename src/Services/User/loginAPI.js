@@ -1,4 +1,6 @@
 import axios from "axios";
+import { toast } from "react-toastify";
+
 export const loginUser = async (
   tempEmail,
   tempPassword,
@@ -22,8 +24,10 @@ export const loginUser = async (
       localStorage.setItem("first", res.data.foundUser.firstName);
       const whereTo = location?.state?.from?.pathname;
       navigate(whereTo || "../explore", { replace: true });
+      toast.success("Login Success");
     }
   } catch (e) {
     console.log("error occured:  ", tempEmail, tempPassword, e);
+    toast.error("Login Error");
   }
 };

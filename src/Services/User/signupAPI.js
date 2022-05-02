@@ -1,4 +1,6 @@
 import axios from "axios";
+import { toast } from "react-toastify";
+
 export const signupUser = async (
   tempFirstName,
   tempLastName,
@@ -29,8 +31,10 @@ export const signupUser = async (
 
       const whereTo = location?.state?.from?.pathname;
       navigate(whereTo || "../explore", { replace: true });
+      toast.success("Signup Success");
     }
   } catch (e) {
     console.log("error occured:  ", tempEmail, tempPassword, e);
+    toast.error("Signup Error");
   }
 };

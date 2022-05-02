@@ -1,4 +1,5 @@
 import axios from "axios";
+import { toast } from "react-toastify";
 export const removePlaylistVideo = async (
   playlistID,
   videoID,
@@ -20,8 +21,10 @@ export const removePlaylistVideo = async (
         type: "UPDATE_PLAYLIST_ARRAY",
         payload: res.data.playlist,
       });
+      toast.success("Video removed from playlist");
     }
   } catch (e) {
     console.log("error occured: ", e);
+    toast.error("Failed to removed from playlist");
   }
 };

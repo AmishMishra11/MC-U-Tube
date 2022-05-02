@@ -1,4 +1,5 @@
 import axios from "axios";
+import { toast } from "react-toastify";
 export const addPlaylist = async (title, dispatchVideo) => {
   const newToken = localStorage.getItem("token");
   try {
@@ -18,8 +19,10 @@ export const addPlaylist = async (title, dispatchVideo) => {
         type: "UPDATE_PLAYLIST",
         payload: res.data.playlists,
       });
+      toast.success("Playlist Created");
     }
   } catch (e) {
     console.log("error occured: ", e);
+    toast.error("Failed to create playlist");
   }
 };

@@ -1,4 +1,6 @@
 import axios from "axios";
+import { toast } from "react-toastify";
+
 export const addWatchlater = async (video, dispatchVideo) => {
   const newToken = localStorage.getItem("token");
   try {
@@ -15,8 +17,10 @@ export const addWatchlater = async (video, dispatchVideo) => {
         type: "UPDATE_WATCHLATER",
         payload: res.data.watchlater,
       });
+      toast.success("Added to Watchlater");
     }
   } catch (e) {
     console.log("error occured: ", e);
+    toast.error("Failed to add video to watchlater");
   }
 };

@@ -93,16 +93,22 @@
 
   .playlist-info {
     margin: var(--gap-smallest);
+    padding: var(--gap-small);
   }
 
   .playlist-list-container {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    width: 28rem;
+    width: 100%;
+    flex-wrap: wrap;
   }
 
   .playlist-card-container {
+    width: 100%;
+  }
+
+  .playlist-aside-container {
     width: 100%;
   }
 }
