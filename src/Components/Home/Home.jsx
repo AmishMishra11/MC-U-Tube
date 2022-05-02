@@ -19,7 +19,7 @@ function Home() {
         <div className="home-discription">
           <div className="home-title">
             <h1>
-              Welcome to <span>MC-U-Tube</span>
+              Welcome to <span>MCU-Tube</span>
             </h1>
             <h3>An MCU themed video library for Marvel fans</h3>
           </div>

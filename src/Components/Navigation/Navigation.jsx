@@ -25,7 +25,7 @@ function Navigation() {
           <div className="title">
             <img className="logo" src={Logo} alt="Logo " />
             <Link className="brand-link" to="/">
-              <h2 className="name">MC-U-Tube</h2>
+              <h2 className="name">MCU-Tube</h2>
             </Link>
           </div>
 
