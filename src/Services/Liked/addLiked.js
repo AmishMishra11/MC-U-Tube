@@ -1,4 +1,6 @@
 import axios from "axios";
+import { toast } from "react-toastify";
+
 export const addLiked = async (video, dispatchVideo) => {
   const newToken = localStorage.getItem("token");
   try {
@@ -15,8 +17,10 @@ export const addLiked = async (video, dispatchVideo) => {
         type: "UPDATE_LIKED",
         payload: res.data.likes,
       });
+      toast.success("Video liked");
     }
   } catch (e) {
     console.log("error occured: ", e);
+    toast.error("Failed to add video to likes");
   }
 };

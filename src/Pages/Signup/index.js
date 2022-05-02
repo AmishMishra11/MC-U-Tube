@@ -5,6 +5,7 @@ import { useAuth } from "../../Context/AuthContext";
 import { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { signupUser } from "../../Services/User/signupAPI";
+import { toast } from "react-toastify";
 
 function Signup() {
   const EMAIL_REGEX = new RegExp(
@@ -113,7 +114,7 @@ function Signup() {
         onClick={() =>
           tempFirstName && tempLastName && tempEmail && tempPassword
             ? !EMAIL_REGEX.test(tempEmail)
-              ? alert("Please Enter Valid Email")
+              ? toast.error("Please Enter Valid Email")
               : tempPassword === varifyPassword
               ? signupUser(
                   tempFirstName,
@@ -124,8 +125,8 @@ function Signup() {
                   navigate,
                   location
                 )
-              : alert("Password do not match")
-            : alert("Please fill all the fields")
+              : toast.error("Password do not match")
+            : toast.error("Please fill all the fields")
         }
       >
         <div>Create New Account</div>

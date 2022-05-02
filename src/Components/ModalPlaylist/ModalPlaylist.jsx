@@ -24,8 +24,6 @@ function ModalPlaylist({ item, setShowModal }) {
     removePlaylistVideo(id, item._id, dispatchVideo);
   };
 
-  // const [alreadyInPlaylist, setAlreadyInPlaylist] = useState(false);
-
   return (
     <div className="modal-playlist zi-4">
       <div className="modal-playlist-header">

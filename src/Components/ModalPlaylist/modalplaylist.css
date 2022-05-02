@@ -71,14 +71,13 @@
 
 @media (max-width: 560px) {
   .modal-playlist {
-    height: 25rem;
-    width: 25rem;
+    height: 32rem;
   }
 }
 
-@media (max-width: 370px) {
+@media (max-width: 345px) {
   .modal-playlist {
-    height: 22.5rem;
-    width: 22.5rem;
+    height: 28rem;
+    width: 25rem;
   }
 }

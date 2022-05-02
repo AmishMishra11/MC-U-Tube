@@ -23,6 +23,9 @@ import { useEffect } from "react";
 import { loadVideos } from "./Services/Videos/loadVideos";
 import { useVideo } from "./Context/VideoContext";
 
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 function App() {
   const { dispatchVideo } = useVideo();
 
@@ -40,43 +43,28 @@ function App() {
           <Route path="explore" element={<Explore />} />
           <Route path="video/:videoId" element={<Video />} />
 
-          <Route
-            path="liked"
-            element={
-              <RequiresAuth>
-                <Liked />
-              </RequiresAuth>
-            }
-          />
-          <Route
-            path="playlist"
-            element={
-              <RequiresAuth>
-                <Playlist />
-              </RequiresAuth>
-            }
-          />
-          <Route
-            path="watchlater"
-            element={
-              <RequiresAuth>
-                <WatchLater />
-              </RequiresAuth>
-            }
-          />
-          <Route
-            path="history"
-            element={
-              <RequiresAuth>
-                <History />
-              </RequiresAuth>
-            }
-          />
+          <Route element={<RequiresAuth />}>
+            <Route path="liked" element={<Liked />} />
+            <Route path="playlist" element={<Playlist />} />
+            <Route path="watchlater" element={<WatchLater />} />
+            <Route path="history" element={<History />} />
+          </Route>
         </Route>
         <Route path="login" element={<Login />} />
         <Route path="signup" element={<Signup />} />
       </Routes>
       <Footer />
+
+      <ToastContainer
+        position="top-right"
+        autoClose={1000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+      />
     </div>
   );
 }
