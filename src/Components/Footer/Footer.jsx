@@ -31,7 +31,7 @@ function Footer() {
             </a>
           </div>
 
-          <p>© Mercart, 2022 All rights reserved.</p>
+          <p>© MCU-Tube, 2022 All rights reserved.</p>
 
           <h4>Socials</h4>
           <div className="footer-social">
